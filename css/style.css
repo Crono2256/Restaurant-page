@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+    /* font-family: 'Fondamento', cursive; */
+    font-family: 'Courgette', cursive;
+    /* font-family: 'Fira Sans', sans-serif; */
+}
+
+body {
+    background-image: url('../images/bgpattern1.png');
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 15vh;
+    border-bottom: 4px solid #444;
+}
+
+header .burger {
+    padding: .5rem 1rem;
+    font-size: 2rem;
+    color: #666;
+}
+
+header .logo {
+    border: 2px solid black;
+    height: 10vh;
+    margin-right: 30px;
+    margin-left: 20px;
+    flex-grow: 1;
+    font-size: 3.2rem;
+    line-height: 10vh;
+    text-align: center;
+}
+
+header nav {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 103%;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li a {
+    display: block;
+    background-color: rgba(195, 195, 195, 0.4);
+    color: #222;
+    font-size: 1.4rem;
+    width: 100vw;
+    line-height: 160%;
+    text-decoration: none;
+    border-bottom: 2px solid saddlebrown;
+    padding-left: 30px;
+}
