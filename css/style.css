@@ -20,13 +20,28 @@ header {
     align-items: center;
     position: relative;
     height: 15vh;
+    padding-left: 1rem;
     border-bottom: 4px solid #444;
+    background-image: url('../images/bgpattern1.png');
 }
 
 header .burger {
-    padding: .5rem 1rem;
     font-size: 2rem;
+    text-align: center;
+    width: 2rem;
     color: #666;
+}
+
+header .burger .fa-times {
+    display: none;
+}
+
+header .burger.active .fa-times {
+    display: block;
+}
+
+header .burger.active .fa-bars {
+    display: none;
 }
 
 header .logo {
@@ -44,6 +59,12 @@ header nav {
     position: absolute;
     z-index: -1;
     left: 0;
+    top: -100%;
+    z-index: -1;
+    transition: .3s;
+}
+
+header nav.active {
     top: 103%;
 }
 
