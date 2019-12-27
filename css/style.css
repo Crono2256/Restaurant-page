@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --headerHeight: 15vh;
+    --navHeight: 35vh;
+}
+
 html {
     font-size: 20px;
     /* font-family: 'Fondamento', cursive; */
@@ -19,7 +24,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    height: 15vh;
+    height: var(--headerHeight);
     padding-left: 1rem;
     border-bottom: 4px solid #444;
     background-image: url('../images/bgpattern1.png');
@@ -56,10 +61,14 @@ header .logo {
 }
 
 header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: var(--navHeight);
     position: absolute;
     z-index: -1;
     left: 0;
-    top: -100%;
+    top: calc(var(--headerHeight) - var(--navHeight));
     z-index: -1;
     transition: .3s;
 }
@@ -68,17 +77,15 @@ header nav.active {
     top: 103%;
 }
 
-header nav ul {
-    list-style: none;
-}
-
-header nav ul li a {
-    display: block;
+header nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: rgba(195, 195, 195, 0.4);
     color: #222;
     font-size: 1.4rem;
     width: 100vw;
-    line-height: 160%;
+    height: 100%;
     text-decoration: none;
     border-bottom: 2px solid saddlebrown;
     padding-left: 30px;
