@@ -5,8 +5,8 @@
 }
 
 :root {
-    --headerHeight: 15vh;
-    --navHeight: 35vh;
+    --headerHeight: 100px;
+    --navHeight: 220px;
 }
 
 html {
@@ -20,22 +20,29 @@ body {
     background-image: url('../images/bgpattern1.png');
 }
 
-@media (orientation: portrait) {
+/* HEADER AND NAV MOBILE */
+
+@media (max-width: 1019px) {
     header {
-        display: flex;
-        align-items: center;
-        position: relative;
         height: var(--headerHeight);
-        padding-left: .8rem;
         border-bottom: 4px solid #444;
         background-image: url('../images/bgpattern1.png');
     }
 
+    header .wrap {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+    }
+
     header .burger {
+        margin-left: .8rem;
         font-size: 35px;
         text-align: center;
         width: 2rem;
         color: #666;
+        cursor: pointer;
     }
 
     header .burger .fa-times {
@@ -56,7 +63,7 @@ body {
         margin-right: 30px;
         margin-left: 20px;
         flex-grow: 1;
-        font-size: 3.2rem;
+        font-size: 1rem;
         line-height: 10vh;
         text-align: center;
     }
@@ -64,7 +71,6 @@ body {
     header nav {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         height: var(--navHeight);
         position: absolute;
         z-index: -1;
@@ -86,7 +92,7 @@ body {
         color: #222;
         font-size: 1.4rem;
         width: 100vw;
-        height: 100%;
+        height: calc(var(--navHeight) / 4);
         text-decoration: none;
         border-bottom: 2px solid saddlebrown;
         padding-left: 30px;
@@ -98,7 +104,13 @@ body {
         }
     }
 
-    @media (min-width: 760px) {
+    @media (min-width: 760px) and (orientation: portrait) {
+
+        :root {
+            --headerHeight: 160px;
+            --navHeight: 380px;
+        }
+
         html {
             font-size: 30px;
         }
@@ -107,5 +119,68 @@ body {
             font-size: 45px;
         }
     }
+}
 
+/* HEADER AND NAV DESKTOP */
+
+@media (min-width: 1020px) {
+    header {
+        height: var(--headerHeight);
+        border-bottom: 4px solid #444;
+    }
+
+    header .wrap {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        height: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+    }
+
+    header .burger {
+        display: none;
+    }
+
+    header .logo {
+        border: 2px solid black;
+        height: 10vh;
+        margin-right: 30px;
+        margin-left: 20px;
+        flex-grow: 1;
+        font-size: 1rem;
+        line-height: 10vh;
+        text-align: center;
+    }
+
+    header nav {
+        display: flex;
+        flex-basis: 70%;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60%;
+        padding-right: 30px;
+        padding-left: 10px;
+    }
+
+    header nav a {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 20%;
+        justify-content: space-around;
+        background-color: rgba(195, 195, 195, 0.4);
+        color: #222;
+        font-size: 1.2rem;
+        height: 100%;
+        text-decoration: none;
+        border: 2px solid saddlebrown;
+        text-align: center;
+        transition: .3s;
+    }
+
+    header nav a:hover {
+        color: #ddd;
+        background-color: rgba(117, 106, 91, 0.8);
+        border-color: cornsilk;
+    }
 }
