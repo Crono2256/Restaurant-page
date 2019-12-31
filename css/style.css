@@ -5,7 +5,7 @@
 }
 
 :root {
-    --headerHeight: 100px;
+    --headerHeight: 160px;
     --navHeight: 220px;
 }
 
@@ -17,20 +17,22 @@ html {
 }
 
 body {
-    background-image: url('../images/bgpattern1.png');
+    /* background-image: url('../images/bgpattern1.png'); */
 }
 
 /* HEADER AND NAV MOBILE */
 
 @media (max-width: 1019px) {
+
     header {
         height: var(--headerHeight);
         border-bottom: 4px solid #444;
-        background-image: url('../images/bgpattern1.png');
+        background-color: white;
     }
 
     header .wrap {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         position: relative;
         height: 100%;
@@ -57,15 +59,9 @@ body {
         display: none;
     }
 
-    header .logo {
-        border: 2px solid black;
-        height: 10vh;
-        margin-right: 30px;
-        margin-left: 20px;
-        flex-grow: 1;
-        font-size: 1rem;
-        line-height: 10vh;
-        text-align: center;
+    header .logo+img {
+        height: calc(var(--headerHeight) - 4px);
+        margin-right: 20px;
     }
 
     header nav {
@@ -104,10 +100,10 @@ body {
         }
     }
 
-    @media (min-width: 760px) and (orientation: portrait) {
+    @media (min-width: 760px) {
 
         :root {
-            --headerHeight: 160px;
+            --headerHeight: 200px;
             --navHeight: 380px;
         }
 
@@ -116,7 +112,8 @@ body {
         }
 
         header .burger {
-            font-size: 45px;
+            font-size: 60px;
+            margin-left: 50px;
         }
     }
 }
@@ -124,15 +121,22 @@ body {
 /* HEADER AND NAV DESKTOP */
 
 @media (min-width: 1020px) {
+    :root {
+        --headerHeight: 110px;
+    }
+
     header {
         height: var(--headerHeight);
         border-bottom: 4px solid #444;
+        background-color: #fff;
     }
 
     header .wrap {
         display: flex;
-        flex-direction: row-reverse;
+        position: relative;
+        justify-content: flex-end;
         align-items: center;
+        background-color: #fff;
         height: 100%;
         max-width: 1240px;
         margin: 0 auto;
@@ -143,19 +147,28 @@ body {
     }
 
     header .logo {
-        border: 2px solid black;
-        height: 10vh;
-        margin-right: 30px;
-        margin-left: 20px;
-        flex-grow: 1;
-        font-size: 1rem;
-        line-height: 10vh;
-        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: content-box;
+        height: 187px;
+        width: 300px;
+        border: 4px solid #444;
+        border-radius: 40%;
+        z-index: -1;
+    }
+
+    header .logo+img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 4px solid transparent;
+        border-radius: 40%;
     }
 
     header nav {
         display: flex;
-        flex-basis: 70%;
+        flex-basis: 68%;
         flex-direction: row;
         justify-content: space-between;
         height: 60%;
