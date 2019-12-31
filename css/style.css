@@ -61,7 +61,7 @@ body {
 
     header .logo+img {
         height: calc(var(--headerHeight) - 4px);
-        margin-right: 20px;
+        margin-right: 10px;
     }
 
     header nav {
@@ -196,4 +196,37 @@ body {
         background-color: rgba(117, 106, 91, 0.8);
         border-color: cornsilk;
     }
+}
+
+/* BANNER MOBILE */
+
+.banner {
+    position: relative;
+    height: calc(100vh - var(--headerHeight));
+    overflow: hidden;
+}
+
+.banner .slider {
+    background-image: url("../images/slider1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.banner button {
+    position: absolute;
+    height: 40%;
+    width: 15%;
+    background-color: rgba(210, 210, 210, 0.6);
+    border: 1px solid rgba(80, 80, 80, 0.6);
+    font-size: 2rem;
+    color: rgba(40, 40, 40, 0.8);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.banner button.arrow-right {
+    left: auto;
+    right: 0;
 }
