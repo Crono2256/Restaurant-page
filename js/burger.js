@@ -1,7 +1,7 @@
 const burger = document.querySelector('header .burger');
+const nav = document.querySelector('header nav');
 
 burger.addEventListener('click', function () {
-    const nav = document.querySelector('header nav');
     nav.classList.toggle('active');
     this.classList.toggle('active');
 })

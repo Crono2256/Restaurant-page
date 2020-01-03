@@ -11,12 +11,11 @@
 
 html {
     font-size: 20px;
-    /* font-family: 'Fondamento', cursive; */
-    font-family: 'Courgette', cursive;
-    /* font-family: 'Fira Sans', sans-serif; */
+    font-family: noto-sans, sans-serif;
 }
 
 body {
+    min-height: 100vh;
     /* background-image: url('../images/bgpattern1.png'); */
 }
 
@@ -26,12 +25,18 @@ body {
 
     header {
         height: var(--headerHeight);
-        border-bottom: 4px solid #444;
         background-color: white;
+        z-index: 4;
+    }
+
+    header * {
+        position: relative;
+        z-index: 1;
     }
 
     header .wrap {
         display: flex;
+        background-color: white;
         justify-content: space-between;
         align-items: center;
         position: relative;
@@ -45,6 +50,7 @@ body {
         width: 2rem;
         color: #666;
         cursor: pointer;
+        z-index: 2;
     }
 
     header .burger .fa-times {
@@ -59,6 +65,17 @@ body {
         display: none;
     }
 
+    header .logo {
+        box-sizing: content-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-bottom: 4px solid #444;
+    }
+
     header .logo+img {
         height: calc(var(--headerHeight) - 4px);
         margin-right: 10px;
@@ -66,13 +83,13 @@ body {
 
     header nav {
         display: flex;
+        font-family: 'Courgette', cursive;
         flex-direction: column;
         height: var(--navHeight);
         position: absolute;
-        z-index: -1;
         left: 0;
         top: calc(var(--headerHeight) - var(--navHeight));
-        z-index: -1;
+        z-index: 0;
         transition: .3s;
     }
 
@@ -84,7 +101,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: rgba(195, 195, 195, 0.4);
+        background-color: rgba(219, 192, 148, 0.9);
         color: #222;
         font-size: 1.4rem;
         width: 100vw;
@@ -108,7 +125,7 @@ body {
         }
 
         html {
-            font-size: 30px;
+            font-size: 40px;
         }
 
         header .burger {
@@ -168,6 +185,7 @@ body {
 
     header nav {
         display: flex;
+        font-family: 'Courgette', cursive;
         flex-basis: 68%;
         flex-direction: row;
         justify-content: space-between;
@@ -204,29 +222,98 @@ body {
     position: relative;
     height: calc(100vh - var(--headerHeight));
     overflow: hidden;
+    z-index: 0;
+    /* display: none; */
 }
 
-.banner .slider {
-    background-image: url("../images/slider1.jpg");
+.banner .slider-wrap {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 300%;
+    transition: left .7s;
+}
+
+.banner .slider-wrap.left {
+    left: 0;
+}
+
+.banner .slider-wrap.middle {
+    left: -100%;
+}
+
+.banner .slider-wrap.right {
+    left: -200%;
+}
+
+.banner .slider-wrap>div {
+    width: 33.33%;
+    height: 100%;
+    padding: 30px 20px;
     background-size: cover;
     background-position: center;
-    height: 100%;
+}
+
+.banner .slider-wrap .slider1 {
+    background-image: url("../images/slider1.jpg");
+}
+
+.banner .slider-wrap .slider2 {
+    background-image: url("../images/slider2.jpg");
+}
+
+.banner .slider-wrap .slider3 {
+    background-image: url("../images/slider3.jpg");
+}
+
+.banner .slider-wrap .text {
+    background-color: rgba(216, 199, 184, 0.6);
+    border: 4px solid rgba(60, 60, 60, 0.2);
+    padding: 10px 0 10px;
+    border-radius: 10%;
+    text-align: center;
+    z-index: 2;
+}
+
+.banner .slider-wrap .text h2 {
+    font-size: 1.5rem;
+}
+
+.banner .slider-wrap .text p {
+    margin-top: 10px;
+    font-size: .9rem;
 }
 
 .banner button {
     position: absolute;
     height: 40%;
     width: 15%;
-    background-color: rgba(210, 210, 210, 0.6);
-    border: 1px solid rgba(80, 80, 80, 0.6);
+    background-color: rgba(210, 210, 210, 0.4);
+    border: 1px solid rgba(80, 80, 80, 0.4);
     font-size: 2rem;
-    color: rgba(40, 40, 40, 0.8);
+    color: rgba(40, 40, 40, 0.6);
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    z-index: 3;
 }
 
 .banner button.arrow-right {
     left: auto;
     right: 0;
+}
+
+@media (min-width: 760px) {
+    .banner .slider-wrap>div {
+        padding: 80px 60px;
+    }
+
+    .banner .slider-wrap .text {
+        padding: 20px 40px;
+    }
+
+    .banner .slider-wrap .text p {
+        margin-top: 20px;
+    }
 }
