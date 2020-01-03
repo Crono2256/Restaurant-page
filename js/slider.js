@@ -40,11 +40,11 @@ buttons.forEach(button => button.addEventListener('click', function () {
         if (this.classList.contains('arrow-right')) {
             slideRight();
             clearInterval(slideTimer);
-            slideTimer = setInterval(slideRight, 2000);
+            slideTimer = setInterval(slideRight, 5000);
         } else {
             SlideLeft();
             clearInterval(slideTimer);
-            slideTimer = setInterval(slideRight, 2000);
+            slideTimer = setInterval(slideRight, 5000);
         }
     }
 }))
