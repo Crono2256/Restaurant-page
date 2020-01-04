@@ -5,7 +5,7 @@
 }
 
 :root {
-    --headerHeight: 160px;
+    --headerHeight: 110px;
     --navHeight: 220px;
 }
 
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 200vh;
     /* background-image: url('../images/bgpattern1.png'); */
 }
 
@@ -341,4 +341,28 @@ body {
         width: 50px;
         height: 20%;
     }
+}
+
+/* ABOUT MOBILE */
+
+.about h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 2rem;
+    line-height: 3rem;
+    width: 100%;
+    text-align: center;
+    background-color: #232323;
+    color: rgb(160, 134, 73);
+    margin-top: 10px;
+}
+
+.about p {
+    font-size: .85rem;
+    color: #222;
+    padding: 20px 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 140%;
+    font-weight: normal;
+    background-image: linear-gradient(120deg, rgba(211, 214, 32, 0.1), rgba(160, 134, 73, 0.3));
 }
