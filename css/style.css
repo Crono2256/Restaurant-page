@@ -131,7 +131,7 @@ body {
         }
 
         html {
-            font-size: 40px;
+            font-size: 30px;
         }
 
         header .burger {
@@ -350,6 +350,9 @@ body {
 }
 
 /* ABOUT MOBILE */
+.wrap-bottom {
+    background-image: url('../images/bgpattern2.png');
+}
 
 .about h2 {
     font-family: 'Courgette', cursive;
@@ -376,5 +379,28 @@ body {
 @media (orientation: landscape) {
     .about p {
         padding: 20px 40px;
+    }
+}
+
+/* ABOUT DESKTOP */
+
+@media (min-width: 1020px) {
+    .wrap-bottom {
+        padding-top: 30px;
+    }
+
+    .about {
+        margin: 0 auto;
+        width: 80vw;
+        max-width: 1240px;
+        padding-bottom: 30px;
+    }
+
+    .about h2 {
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        opacity: .8;
     }
 }
