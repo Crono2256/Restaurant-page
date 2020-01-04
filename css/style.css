@@ -111,7 +111,13 @@ body {
         padding-left: 30px;
     }
 
-    @media (min-width: 360px) {
+    @media (min-width: 360px) and (orientation: portrait) {
+        html {
+            font-size: 24px;
+        }
+    }
+
+    @media (min-width: 640px) and (orientation: landscape) {
         html {
             font-size: 24px;
         }
@@ -353,7 +359,7 @@ body {
     text-align: center;
     background-color: #232323;
     color: rgb(160, 134, 73);
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .about p {
@@ -364,5 +370,11 @@ body {
     letter-spacing: 1px;
     line-height: 140%;
     font-weight: normal;
-    background-image: linear-gradient(120deg, rgba(211, 214, 32, 0.1), rgba(160, 134, 73, 0.3));
+    background-image: linear-gradient(135deg, cornsilk 30%, 70%, wheat 90%);
+}
+
+@media (orientation: landscape) {
+    .about p {
+        padding: 20px 40px;
+    }
 }
