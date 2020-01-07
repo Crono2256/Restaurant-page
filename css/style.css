@@ -11,7 +11,19 @@
 
 html {
     font-size: 20px;
-    font-family: noto-sans, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+@media (min-width: 360px) and (orientation: portrait) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+    html {
+        font-size: 24px;
+    }
 }
 
 body {
@@ -111,28 +123,16 @@ body {
         padding-left: 30px;
     }
 
-    @media (min-width: 360px) and (orientation: portrait) {
-        html {
-            font-size: 24px;
-        }
-    }
-
-    @media (min-width: 640px) and (orientation: landscape) {
-        html {
-            font-size: 24px;
-        }
-    }
-
-    @media (min-width: 760px) {
+    @media (min-width: 760px) and (orientation: portrait) {
 
         :root {
             --headerHeight: 200px;
             --navHeight: 380px;
         }
 
-        html {
+        /* html {
             font-size: 30px;
-        }
+        } */
 
         header .burger {
             font-size: 60px;
@@ -207,7 +207,7 @@ body {
         flex-direction: column;
         flex-basis: 20%;
         justify-content: space-around;
-        background-color: rgba(195, 195, 195, 0.4);
+        background-color: rgb(243, 240, 236);
         color: #222;
         font-size: 1.2rem;
         height: 100%;
@@ -218,9 +218,9 @@ body {
     }
 
     header nav a:hover {
-        color: #ddd;
-        background-color: rgba(117, 106, 91, 0.8);
-        border-color: cornsilk;
+        color: rgb(243, 240, 236);
+        background-color: rgb(164, 139, 94);
+        border-color: #341b09;
     }
 }
 
@@ -313,6 +313,13 @@ body {
 }
 
 @media (min-width: 760px) {
+
+    @media (orientation: portrait) {
+        .banner {
+            height: calc(60vh - var(--headerHeight));
+        }
+    }
+
     .banner .slider-wrap>div {
         padding: 80px 60px;
     }
@@ -402,5 +409,103 @@ body {
 
     .about p {
         opacity: .8;
+    }
+}
+
+/* ESSENTAILS MOBILE and DESKTOP */
+
+.essentials {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+    color: #3c2b0c;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.essentials>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 200px;
+    flex-grow: 1;
+    flex-basis: 350px;
+    margin-top: 2rem;
+}
+
+.essentials h2 {
+    font-family: 'Courgette', cursive;
+    font-weight: normal;
+}
+
+.essentials h2+* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    /* padding-top: 1rem; */
+}
+
+.essentials>div>p {
+    line-height: 140%;
+    ;
+    padding: 1rem;
+}
+
+.essentials button {
+    min-width: 160px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: inherit;
+    background-color: rgba(220, 220, 220, 0.8);
+    border: 2px solid #888;
+    border-radius: 5%;
+    /* margin: .6rem 0 1.2rem; */
+    padding: .3rem 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.essentials button:hover {
+    color: rgba(220, 220, 220, 1);
+    background-color: #3c2b0c;
+    border-color: #bbb;
+}
+
+/* .essentials .contact .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+}
+
+.essentials .contact p {
+    padding: .2rem .5rem;
+    white-space: nowrap;
+}
+
+.essentials .contact p i {
+    font-size: 1.4rem;
+    vertical-align: -.13rem;
+} */
+
+@media (min-width: 359px) and (max-width: 750px) and (orientation: portrait) {
+    .essentials>div {
+        min-height: 240px;
+    }
+}
+
+@media (orientation: landscape) {
+
+    .essentials>div {
+        padding: 0 1.5rem;
     }
 }
