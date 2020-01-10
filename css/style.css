@@ -14,6 +14,10 @@ html {
     font-family: 'Noto Sans', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 @media (min-width: 360px) and (orientation: portrait) {
     html {
         font-size: 24px;
@@ -314,11 +318,11 @@ body {
 
 @media (min-width: 760px) {
 
-    @media (orientation: portrait) {
-        .banner {
-            height: calc(60vh - var(--headerHeight));
-        }
+
+    .banner {
+        height: calc(60vh - var(--headerHeight));
     }
+
 
     .banner .slider-wrap>div {
         padding: 80px 60px;
@@ -369,7 +373,6 @@ body {
     text-align: center;
     background-color: #232323;
     color: rgb(160, 134, 73);
-    /* margin-top: 10px; */
 }
 
 .about p {
@@ -478,25 +481,6 @@ body {
     border-color: #bbb;
 }
 
-/* .essentials .contact .info {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 0;
-}
-
-.essentials .contact p {
-    padding: .2rem .5rem;
-    white-space: nowrap;
-}
-
-.essentials .contact p i {
-    font-size: 1.4rem;
-    vertical-align: -.13rem;
-} */
-
 @media (min-width: 359px) and (max-width: 750px) and (orientation: portrait) {
     .essentials>div {
         min-height: 240px;
@@ -540,6 +524,126 @@ body {
     }
 }
 
-.filler {
-    height: 200vh;
+/* ADDITIONAL */
+
+.additional {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact {
+    /* flex-grow: 1; */
+    text-align: center;
+    color: #3c2b0c;
+    font-size: .8rem;
+    margin-bottom: 30px;
+}
+
+/* .contact .wrap {
+    width: 78%;
+    margin: 0 auto;
+} */
+
+.contact h2 {
+    font-family: 'Courgette', cursive;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 120%;
+    /* width: 100%; */
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.contact .info {
+    text-align: left;
+}
+
+.contact p {
+    padding: .2rem 0;
+}
+
+.contact p i {
+    font-size: 1.2rem;
+    width: 2rem;
+    text-align: center;
+    vertical-align: -.17rem;
+}
+
+.contact p.hours i {
+    vertical-align: 0.38rem;
+}
+
+.contact p span {
+    text-align: left;
+    display: inline-block;
+}
+
+.gallery {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery>div {
+    height: 180px;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.gallery .more {
+    position: absolute;
+    left: auto;
+    top: 100%;
+    font-size: .8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gallery .more:hover {
+    text-shadow: 1px 1px #888;
+}
+
+@media (min-width: 400px) {
+    .additional>* {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+@media (min-width: 610px) and (max-width: 1300px) {
+    .gallery {
+        width: 69vw;
+    }
+}
+
+/* INVITE */
+
+.invite {
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    font-size: 2.3rem;
+    margin-top: 50px;
+    text-align: center;
+    background-color: rgba(80, 80, 80, 0.4);
+    padding: 10px 0;
+}
+
+.invite span {
+    color: #fce436;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+@media (min-width: 410px) {
+    .invite {
+        font-size: 2.5rem;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    height: 10vh;
 }
