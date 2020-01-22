@@ -672,3 +672,59 @@ footer .arrow-up {
 footer .arrow-up:hover {
     box-shadow: 0 0 2px 4px white;
 }
+
+/* MENU MOBILE */
+
+.menu-main h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 2rem;
+    line-height: 3rem;
+    width: 100%;
+    text-align: center;
+    background-color: #232323;
+    color: rgb(160, 134, 73);
+}
+
+.menu-main button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #3c2b0c;
+    background-color: rgba(220, 220, 220, 0.8);
+    border: 2px solid #888;
+    border-radius: 5%;
+    margin: 30px auto 20px;
+    padding: .3rem .8rem;
+}
+
+.menu-options {
+    display: none;
+    width: 90%;
+    letter-spacing: 1.5px;
+    color: #3c2b0c;
+    background-color: rgba(220, 220, 220, 0.8);
+    border: 2px solid #888;
+    border-radius: 5%;
+    margin: 0 auto;
+    padding: .3rem .8rem;
+}
+
+.menu-options.active {
+    display: block;
+}
+
+.menu-options ul {
+    list-style: none;
+    text-align: center;
+}
+
+.menu-options ul li {
+    padding: 8px 0;
+    text-transform: uppercase;
+}
