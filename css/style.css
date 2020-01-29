@@ -16,6 +16,7 @@ html {
 
 body {
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 @media (min-width: 360px) and (orientation: portrait) {
@@ -31,7 +32,7 @@ body {
 }
 
 body {
-    min-height: 200vh;
+    /* min-height: 200vh; */
     /* background-image: url('../images/bgpattern1.png'); */
 }
 
@@ -364,6 +365,7 @@ body {
 /* ABOUT MOBILE */
 .wrap-bottom {
     background-image: url('../images/bgpattern2.png');
+    padding-bottom: 1rem;
 }
 
 .about h2 {
@@ -675,7 +677,20 @@ footer .arrow-up:hover {
 
 /* MENU MOBILE */
 
-.menu-main h2 {
+/* BUTTON AND OPTIONS */
+
+.banner-menu {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    position: center;
+    background-image: url('../images/banner-menu.jpg');
+}
+
+.banner-menu h2 {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
     font-family: 'Courgette', cursive;
     font-size: 2rem;
     line-height: 3rem;
@@ -683,6 +698,11 @@ footer .arrow-up:hover {
     text-align: center;
     background-color: #232323;
     color: rgb(160, 134, 73);
+    opacity: .85;
+}
+
+.menu-main {
+    padding-top: 1.5rem;
 }
 
 .menu-main button {
@@ -699,7 +719,7 @@ footer .arrow-up:hover {
     background-color: rgba(220, 220, 220, 0.8);
     border: 2px solid #888;
     border-radius: 5%;
-    margin: 30px auto 20px;
+    margin: 0 auto 20px;
     padding: .3rem .8rem;
 }
 
@@ -727,4 +747,133 @@ footer .arrow-up:hover {
 .menu-options ul li {
     padding: 8px 0;
     text-transform: uppercase;
+}
+
+/* MEALS LIST */
+
+.menu-main .meals ul {
+    display: none;
+    width: 90%;
+    padding: .8rem .6rem 1.2rem;
+    margin: 1rem auto 0;
+    list-style: none;
+    background-color: rgba(220, 220, 220, 0.6);
+}
+
+.menu-main .meals ul.active {
+    display: block;
+}
+
+.menu-main .meals ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+}
+
+.menu-main .meals ul li:last-child {
+    margin-bottom: 0;
+}
+
+.menu-main .meals ul li .left-side {
+    flex-basis: 80%;
+}
+
+.menu-main .meals ul li .price {
+    font-family: 'Josefin Sans', sans-serif;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.menu-main .meals ul li .meal-name {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.menu-main .meals ul li .meal-elements {
+    font-size: .8rem;
+}
+
+@media (min-width: 500px) {
+
+    .menu-main button {
+        width: 50vw;
+    }
+
+    .menu-main .meals ul {
+        width: 80vw;
+    }
+}
+
+@media (min-width: 760px) {
+    .banner-menu {
+        height: 340px;
+    }
+
+    .menu-main button {
+        margin-top: 50px;
+    }
+
+    .menu-main .meals ul {
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1019px) {
+
+    .banner-menu {
+        height: 450px;
+    }
+
+    .menu-main {
+        width: 70vw;
+        max-width: 880px;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    .banner-menu h2 {
+        /* width: 60%; */
+        /* max-width: 880px; */
+        background-color: transparent;
+        color: white;
+        text-shadow: 2px 2px black;
+        font-size: 100px;
+        opacity: 1;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .menu-main button {
+        width: 300px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .menu-main .meals ul {
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .menu-options {
+        border-radius: 0;
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+
+    .menu-options ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-options ul li {
+        flex-basis: 45%;
+        cursor: pointer;
+    }
+
+    .menu-options ul li:hover {
+        background-color: #ebb7e6;
+    }
+
 }
