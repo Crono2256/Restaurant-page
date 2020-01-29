@@ -19,6 +19,10 @@ body {
     min-height: 100vh;
 }
 
+a {
+    color: black;
+}
+
 @media (min-width: 360px) and (orientation: portrait) {
     html {
         font-size: 24px;
@@ -29,11 +33,6 @@ body {
     html {
         font-size: 24px;
     }
-}
-
-body {
-    /* min-height: 200vh; */
-    /* background-image: url('../images/bgpattern1.png'); */
 }
 
 /* HEADER AND NAV MOBILE */
@@ -659,6 +658,7 @@ footer {
 }
 
 footer .arrow-up {
+    display: none;
     position: fixed;
     bottom: 2%;
     right: 3%;
@@ -669,6 +669,10 @@ footer .arrow-up {
     padding: 5px 15px;
     cursor: pointer;
     transition: .2s;
+}
+
+footer .arrow-up.active {
+    display: block;
 }
 
 footer .arrow-up:hover {
