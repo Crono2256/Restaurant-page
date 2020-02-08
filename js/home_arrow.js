@@ -2,7 +2,6 @@ const arrow = document.querySelector("footer .arrow-up");
 let active = false;
 
 function showArrow() {
-    console.log(window.scrollY);
     if (window.scrollY > 500 && !active) {
         active = !active;
         arrow.classList.add('active')

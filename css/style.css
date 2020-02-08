@@ -21,6 +21,7 @@ body {
 
 a {
     color: black;
+    text-decoration: none;
 }
 
 @media (min-width: 360px) and (orientation: portrait) {
@@ -200,7 +201,7 @@ a {
         font-family: 'Courgette', cursive;
         flex-basis: 68%;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-end;
         height: 60%;
         padding-right: 30px;
         padding-left: 10px;
@@ -215,10 +216,12 @@ a {
         color: #222;
         font-size: 1.2rem;
         height: 100%;
+        margin: 0 20px;
         text-decoration: none;
         border: 2px solid saddlebrown;
         text-align: center;
         transition: .3s;
+        cursor: pointer;
     }
 
     header nav a:hover {
@@ -590,6 +593,10 @@ a {
     justify-content: center;
 }
 
+.gallery a {
+    display: block;
+}
+
 .gallery>div {
     height: 180px;
     width: 300px;
@@ -879,5 +886,56 @@ footer .arrow-up:hover {
     .menu-options ul li:hover {
         background-color: #ebb7e6;
     }
+}
 
+/* GALLERY - BIG  */
+
+h2.gallery-text {
+    font-family: 'Courgette', cursive;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    background-color: #232323;
+    color: rgb(160, 134, 73);
+}
+
+.big-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 30px auto;
+    max-width: 1280px;
+}
+
+.big-gallery>div {
+    height: 200px;
+    width: 300px;
+    margin: 0 20px 40px;
+    border: 2px solid black;
+}
+
+.gallery-main .wrap-bottom {
+    padding-top: 0;
+}
+
+@media (min-width: 1020px) {
+    h2.gallery-text {
+        width: 350px;
+        margin: 0 auto;
+    }
+}
+
+/* OFFER */
+
+.offer-main .wrap-bottom {
+    padding-top: 0;
+}
+
+h2.offer-text {
+    font-family: 'Courgette', cursive;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    background-color: #232323;
+    color: rgb(160, 134, 73);
 }
